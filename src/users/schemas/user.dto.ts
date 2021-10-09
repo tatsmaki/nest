@@ -4,5 +4,5 @@ export class CreateUserDto {
 }
 
 export class DeleteUserDto {
-  readonly id: number
+  readonly id: string
 }

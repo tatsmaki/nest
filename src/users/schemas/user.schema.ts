@@ -5,6 +5,9 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose'
 export class User extends Document {
   @Prop()
   name: string
+
+  @Prop()
+  password: string
 }
 
 export const UserSchema = SchemaFactory.createForClass(User)

@@ -19,10 +19,15 @@ export class UsersService {
   }
 
   getAllUsers = async () => {
+    console.log('get all users')
     return this.userModel.find().exec()
   }
 
   deleteUser = async (id: DeleteUserDto) => {
     return this.userModel.deleteOne({ id })
+  }
+
+  findOne = (name: string) => {
+    return this.userModel.findOne({ name })
   }
 }

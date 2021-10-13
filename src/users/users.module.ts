@@ -7,5 +7,6 @@ import { UserModule } from './schemas/user.module'
   imports: [UserModule],
   controllers: [UsersController],
   providers: [UsersService],
+  exports: [UsersService],
 })
 export class UsersModule {}

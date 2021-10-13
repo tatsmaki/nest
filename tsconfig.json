@@ -12,6 +12,7 @@
     "baseUrl": "./",
     "paths": {
       "@app/*": ["src/app/*"],
+      "@auth/*": ["src/auth/*"],
       "@users/*": ["src/users/*"],
       "@database/*": ["src/database/*"]
     },

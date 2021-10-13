@@ -4,7 +4,7 @@ import { AppModule } from '@app/app.module'
 const start = async () => {
   const app = await NestFactory.create(AppModule)
 
-  await app.listen(3000)
+  await app.listen(4000)
 }
 
 start()

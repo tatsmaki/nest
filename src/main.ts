@@ -6,7 +6,8 @@ import { AppModule } from '@app/app.module'
 const start = async () => {
   const app = await NestFactory.create(AppModule)
 
-  app.enableCors({ origin: true })
+  // app.enableCors({ origin: true })
+  app.enableCors()
   await app.listen(process.env.PORT)
 }
 

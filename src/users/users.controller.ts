@@ -4,11 +4,7 @@ import { CreateUserDto } from './schemas/user.dto'
 
 @Controller('users')
 export class UsersController {
-  private readonly usersService: UsersService
-
-  constructor(usersService: UsersService) {
-    this.usersService = usersService
-  }
+  constructor(private readonly usersService: UsersService) {}
 
   @Post()
   createUser(@Body() newUser: CreateUserDto) {

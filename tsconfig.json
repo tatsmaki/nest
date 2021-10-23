@@ -14,7 +14,7 @@
       "@app/*": ["src/app/*"],
       "@auth/*": ["src/auth/*"],
       "@users/*": ["src/users/*"],
-      "@database/*": ["src/database/*"]
+      "@database/*": ["src/database/*"],
     },
     "incremental": true,
     "skipLibCheck": true,

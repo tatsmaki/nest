@@ -1,3 +1,3 @@
 import { MongooseModule } from '@nestjs/mongoose'
 
-export const DatabaseModule = MongooseModule.forRoot('mongodb://localhost/nest')
+export const DatabaseModule = MongooseModule.forRoot(process.env.DATABASE)

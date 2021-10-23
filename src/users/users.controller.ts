@@ -1,6 +1,6 @@
 import { Controller, Body, Post, Get, Delete, Param } from '@nestjs/common'
 import { UsersService } from './users.service'
-import { CreateUserDto, DeleteUserDto } from './schemas/user.dto'
+import { CreateUserDto } from './schemas/user.dto'
 
 @Controller('users')
 export class UsersController {
@@ -21,7 +21,7 @@ export class UsersController {
   }
 
   @Delete(':id')
-  deleteUserById(@Param() id: DeleteUserDto) {
-    this.usersService.deleteUser(id)
+  deleteUserById(@Param('id') id: string) {
+    return this.usersService.deleteUser(id)
   }
 }

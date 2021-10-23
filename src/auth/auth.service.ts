@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable, HttpException } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { UsersService } from '@users/users.service'
 
@@ -9,20 +9,16 @@ export class AuthService {
     private jwtService: JwtService,
   ) {}
 
-  async validateUser(loginData): Promise<any> {
-    const user = await this.usersService.findOne(loginData.name)
+  login = async ({ username, password }) => {
+    const user = await this.usersService.findOne(username)
 
-    if (user?.password === loginData.password) {
-      return user
+    if (user?.password === password) {
+      return { token: this.jwtService.sign({ username, password }) }
     }
-    return null
+    throw new HttpException('Invalid username or password', 401)
   }
 
-  login(user) {
-    return this.jwtService.sign(user)
-  }
-
-  async signup(user) {
+  signup = async (user) => {
     await this.usersService.createUser(user)
 
     return this.login(user)
